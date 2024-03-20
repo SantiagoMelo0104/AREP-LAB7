@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #login {
+            width: 300px;
+            background: linear-gradient(90deg, rgba(36,24,0,1) 0%, rgba(121,86,9,1) 35%, rgba(129,73,8,1) 66%, rgba(255,181,0,1) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-field {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .input-field label {
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .input-field input {
+            flex-grow: 1;
+            padding: 6px;
+
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .input-field input:focus {
+            outline: none;
+            box-shadow: 0 0 2px 1px #4caf50;
+        }
+
+
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 0;
+            color: white;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin: 0 auto;
+            display: block;
+            width: 50%;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<div id="login">
+    <h3>Iniciar sesión</h3>
+    <form id="login-form">
+        <div class="input-field">
+            <input type="text" id="user" placeholder="User" required>
+            <div class="error" id="usuario-error"></div>
+        </div>
+        <div class="input-field">
+            <input type="password" id="password" placeholder="Password" required>
+            <div class="error" id="password-error"></div>
+        </div>
+        <button type="submit" onclick="verificateLogin(user,password)">Login</button>
+    </form>
+</div>
+
+</body>
+</html>
