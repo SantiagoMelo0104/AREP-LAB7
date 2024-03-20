@@ -8,7 +8,11 @@ public class HelloWorld {
 
         secure("Certificados/ecikeystore.p12", "superonce0104", null, null);
         port(getPort());
-        get("/public", (req, res) -> "Hello World");
+        post("/login", (req, res) -> {
+            String username = req.queryParams("user");
+            String password = req.queryParams("password");
+            return SecureURLReader.secureReadUrl(username, password);
+        });
     }
     static int getPort() {
         if (System.getenv("PORT") != null) {

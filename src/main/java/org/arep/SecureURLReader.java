@@ -20,7 +20,8 @@ import javax.net.ssl.TrustManagerFactory;
 
 public class SecureURLReader {
 
-    public static void main(String[] args) {
+    public static String secureReadUrl(String user, String password) {
+        String secureResponse = "";
         try {
 
             // Create a file and a password representation
@@ -50,11 +51,10 @@ public class SecureURLReader {
             SSLContext.setDefault(sslContext);
 
             // We can now read this URL
-            readURL("https://localhost:5000/index.html");
+            secureResponse = readURL("https://localhost:5010/login?user=" + user + "&password=" + password);
 
             // This one can't be read because the Java default truststore has been
             // changed.
-            readURL("https://www.google.com");
 
         } catch (KeyStoreException ex) {
             Logger.getLogger(SecureURLReader.class.getName()).log(Level.SEVERE, null, ex);
@@ -69,45 +69,24 @@ public class SecureURLReader {
         } catch (KeyManagementException ex) {
             Logger.getLogger(SecureURLReader.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        return secureResponse;
     }
 
-    public static void readURL(String sitetoread) {
+    public static String readURL(String sitetoread) {
+        StringBuffer response = new StringBuffer();
         try {
-            // Crea el objeto que representa una URL2
             URL siteURL = new URL(sitetoread);
-            // Crea el objeto que URLConnection
             URLConnection urlConnection = siteURL.openConnection();
-            // Obtiene los campos del encabezado y los almacena en un estructura Map
-            Map<String, List<String>> headers = urlConnection.getHeaderFields();
-            // Obtiene una vista del mapa como conjunto de pares <K,V>
-            // para poder navegarlo
-            Set<Map.Entry<String, List<String>>> entrySet = headers.entrySet();
-            // Recorre la lista de campos e imprime los valores
-            for (Map.Entry<String, List<String>> entry : entrySet) {
-                String headerName = entry.getKey();
-
-                //Si el nombre es nulo, significa que es la linea de estado
-                if (headerName != null) {
-                    System.out.print(headerName + ":");
-                }
-                List<String> headerValues = entry.getValue();
-                for (String value : headerValues) {
-                    System.out.print(value);
-                }
-                System.out.println("");
-            }
-
-            System.out.println("-------message-body------");
             BufferedReader reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-
             String inputLine = null;
             while ((inputLine = reader.readLine()) != null) {
                 System.out.println(inputLine);
+                response.append(inputLine);
             }
         } catch (IOException x) {
-            System.err.println(x);
+            response.append(x);
         }
+        return response.toString();
     }
 }
 

@@ -51,7 +51,6 @@
             box-shadow: 0 0 2px 1px #4caf50;
         }
 
-
         .error {
             color: red;
             margin-top: 5px;
@@ -87,15 +86,24 @@
     <form id="login-form">
         <div class="input-field">
             <input type="text" id="user" placeholder="User" required>
-            <div class="error" id="usuario-error"></div>
         </div>
         <div class="input-field">
             <input type="password" id="password" placeholder="Password" required>
-            <div class="error" id="password-error"></div>
         </div>
-        <button type="submit" onclick="verificateLogin(user,password)">Login</button>
+        <button type="submit" onclick="verificateLogin(user, password)">Login</button>
     </form>
+    <div id="answerLogin">r</div>
 </div>
+<script>
+    function verificateLogin(user, password) {
+        let url = "/login?user=" + user.value + "&password=" + password.value;
+        fetch(url, {method: 'POST'})
+            .then(x => x.text())
+            .then(y => {
+                document.getElementById("answerLogin").innerHTML = y;
+            });
+    }
+</script>
 
 </body>
 </html>
