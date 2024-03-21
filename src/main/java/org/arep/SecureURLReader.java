@@ -17,9 +17,22 @@ import java.util.logging.Logger;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
-
+/**
+ * This class is used to read the content of a URL securely.
+ */
 public class SecureURLReader {
-
+    /**
+     * This method reads the content of a URL securely using the provided user and password.
+     * @param user     the username to use for authentication
+     * @param password the password to use for authentication
+     * @return the content of the URL as a string
+     * @throws KeyStoreException            if there is an error loading the keystore
+     * @throws FileNotFoundException         if the keystore file is not found
+     * @throws IOException                    if there is an error reading the keystore or URL
+     * @throws NoSuchAlgorithmException       if there is no such algorithm
+     * @throws CertificateException            if there is an error with the certificate
+     * @throws KeyManagementException         if there is an error initializing the SSL context
+     */
     public static String secureReadUrl(String user, String password) {
         String secureResponse = "";
         try {
@@ -71,7 +84,13 @@ public class SecureURLReader {
         }
         return secureResponse;
     }
+    /**
 
+     * This method reads the content of a URL.
+     * @param sitetoread the URL to read
+     * @return the content of the URL as a string
+     * @throws IOException if there is an error reading the URL
+     */
     public static String readURL(String sitetoread) {
         StringBuffer response = new StringBuffer();
         try {
