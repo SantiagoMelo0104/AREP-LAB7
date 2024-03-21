@@ -101,6 +101,7 @@
 
 
 <script>
+
     function verificateLogin(user, pass) {
         let url = "/login?user=" + user.value + "&password=" + pass.value;
         fetch(url, {method: 'POST'})
