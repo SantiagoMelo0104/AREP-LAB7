@@ -1,4 +1,4 @@
-# LABORATORIO 6 - APLICACIÓN DISTTRIBUIDA SEGURA EN TODOS SUS FRENTES
+# LABORATORIO 7 - APLICACIÓN DISTTRIBUIDA SEGURA EN TODOS SUS FRENTES
 
 En este laboratorio, se llevará a cabo el desarrollo de una aplicación web robusta, priorizando la seguridad en cada etapa del proceso. La meta fundamental consiste en asegurar la autenticación, autorización e integridad de los usuarios que interactúen con la aplicación. Los resultados esperados comprenden la entrega del código fuente alojado en GitHub, un informe detallado disponible en el archivo README, y un video demostrativo alojado en AWS. Todo ello se logrará mediante la implementación de protocolos de seguridad sólidos, como HTTPS, y la incorporación de medidas para garantizar la confiabilidad y seguridad del acceso a servicios remotos. Este enfoque integral permitirá no solo evidenciar la seguridad de nuestro prototipo, sino también destacar su funcionalidad y eficacia en la protección de datos sensibles y la salvaguardia de la experiencia del usuario.
 # Iniciando 
@@ -31,7 +31,7 @@ Por último, la clase HelloWorld es la encargada de inicializar la aplicación w
 
 * Los siguiente comando le permitira clonar el repositorio de manera local:
   ~~~
-  git clone https://github.com/SantiagoMelo0104/AREP-LAB6.git
+  https://github.com/SantiagoMelo0104/AREP-LAB7.git
   ~~~
 * Entrar al directorio del proyecto con el siguiente comando:
   tenga abirto dos lineas de comando (cmd) pues neceistamos ejecutar las dos clases que van estar ejecutandose al mismo tiempo‼️
