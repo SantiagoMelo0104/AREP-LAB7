@@ -3,11 +3,11 @@ package org.arep;
 import static spark.Spark.*;
 public class HelloWorld {
     public static void main(String[] args) {
-        staticFiles.location("/public");
-        //API: secure(keystoreFilePath, keystorePassword, truststoreFilePath,truststorePassword);
 
+        //API: secure(keystoreFilePath, keystorePassword, truststoreFilePath,truststorePassword);
         secure("Certificados/ecikeystore.p12", "superonce0104", null, null);
         port(getPort());
+        staticFiles.location("/public");
         post("/login", (req, res) -> {
             String username = req.queryParams("user");
             String password = req.queryParams("password");
