@@ -56,12 +56,22 @@ vera esta pantalla:
 ![imagen](https://github.com/SantiagoMelo0104/AREP-LAB7/assets/123812833/186fee41-f758-429d-925f-b387c75c278c)
 
 para probar que si funciona correctamente pruebe con:
+~~~
 usuario: santiago
 contraseña: 12345
-
+~~~
 # pruebas
 ## Local
 ![imagen](https://github.com/SantiagoMelo0104/AREP-LAB7/assets/123812833/973cfad3-a982-4032-8305-1a4a4699a9ee)
+Cuando se logue correctamente
+![imagen](https://github.com/SantiagoMelo0104/AREP-LAB7/assets/123812833/4be82e2a-095a-4e85-96f5-0dc0daa99a2b)
+Si la contraseña esta mal pero si exoste el usuario
+![imagen](https://github.com/SantiagoMelo0104/AREP-LAB7/assets/123812833/c4439228-79e1-453d-9059-945c99d8c914)
+Si  no existe el usuario
+![imagen](https://github.com/SantiagoMelo0104/AREP-LAB7/assets/123812833/6c042f44-606d-4fa7-9979-ca5aee9e3300)
+
+
+
 
 ## AWS
 Abrir en el navegador y colocar el path lo siguiente: 
